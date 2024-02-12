@@ -29,8 +29,8 @@ poimandres.replace = {
 }
 
 poimandres.terminal = {
-  a = { bg = colors.green1, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.green1 },
+  a = { bg = colors.lowerMint, fg = colors.black },
+  b = { bg = colors.fg_gutter, fg = colors.lowermint },
 }
 
 poimandres.inactive = {
