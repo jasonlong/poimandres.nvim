@@ -94,14 +94,14 @@ function M.setup(opts)
   colors.bg_float = util.darken(colors.bg, 0.8)
 
   colors.bg_visual = util.darken(colors.bluishGray, 0.3)
-  colors.bg_search = colors.lightBlue
+  colors.bg_search = colors.brightYellow
   colors.fg_sidebar = colors.fg_dark
   colors.fg_float = colors.fg
 
   colors.error = colors.pink
   colors.todo = colors.lowerBlue
   colors.warning = colors.brightYellow
-  colors.info = colors.desaturatedBlue
+  colors.info = colors.lowerBlue
   colors.hint = colors.brightMint
 
   colors.delta = {

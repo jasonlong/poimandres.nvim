@@ -70,7 +70,7 @@ function M.setup()
     PmenuThumb = { bg = c.selection }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.lowerBlue }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search = { bg = util.darken(c.bluishGrayBrighter, 0.3), fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search = { bg = util.darken(c.brightYellow, 0.2) }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.bg_search, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     SpecialKey = { fg = c.nonText }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -142,7 +142,7 @@ function M.setup()
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     Error = { fg = c.error }, -- (preferred) any erroneous construct
-    Todo = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo = { bg = c.brightYellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     qfLineNr = { fg = c.darkerGray },
     qfFileName = { fg = c.lowerBlue },
@@ -387,7 +387,11 @@ function M.setup()
     diffLine = { fg = c.comment },
     diffIndexLine = { fg = c.offWhite },
 
-    -- GitGutter
+    --todo-comments
+    -- TodoBgTODO = { bg = c.brightYellow, fg = c.bg },
+    -- TodoFgTODO = { fg = c.brightYellow },
+
+    -- GitGutters
     GitGutterAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
     GitGutterChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
     GitGutterDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
