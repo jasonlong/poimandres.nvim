@@ -48,7 +48,7 @@ function M.setup(opts)
   opts = opts or {}
   local config = require("poimandres.config")
 
-  local style = config.is_day() and config.options.light_style or config.options.style
+  local style = config.is_day() or config.options.style
   local palette = M[style] or {}
   if type(palette) == "function" then
     palette = palette()
@@ -59,13 +59,12 @@ function M.setup(opts)
   local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
 
   util.bg = colors.bg
-  util.day_brightness = config.options.day_brightness
 
   -- Default poimandres text color is `colors.gray`, but nvim doesn't have a way
   -- of setting text inside html/tsx/etc. tags to white so we use `colors.offWhite` instead
   colors.fg = colors.offWhite
   colors.fg_dark = colors.darkerGray
-  colors.bg_dark = util.darken(colors.bg, 0.5)
+  colors.bg_dark = util.darken(colors.bg, 0.1)
   colors.fg_gutter = util.blend(colors.darkerGray, colors.bg, "50")
   colors.comment = util.blend(colors.darkerGray, colors.bg, "b0")
   colors.selection = util.blend(colors.selection, colors.bg, "25")
@@ -91,10 +90,10 @@ function M.setup(opts)
   colors.bg_statusline = colors.bg_dark
 
   -- Floats are configurable
-  colors.bg_float = util.darken(colors.bg, 0.8)
+  colors.bg_float = util.darken(colors.bg, 0.5)
 
   colors.bg_visual = util.darken(colors.bluishGray, 0.3)
-  colors.bg_search = colors.brightYellow
+  colors.bg_search = colors.brightMint
   colors.fg_sidebar = colors.fg_dark
   colors.fg_float = colors.fg
 

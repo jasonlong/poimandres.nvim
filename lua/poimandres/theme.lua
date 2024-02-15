@@ -29,9 +29,7 @@ function M.setup()
     Comment = { fg = c.comment, style = options.styles.comments }, -- any comment
     ColorColumn = { bg = c.black }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = c.darkerGray }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor = { fg = c.bg, bg = c.gray }, -- character under the cursor
-    lCursor = { fg = c.bg, bg = c.gray }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-    CursorIM = { fg = c.bg, bg = c.gray }, -- like Cursor, but used when in IME mode |CursorIM|
+    Cursor = { bg = c.gray }, -- character under the cursor
     CursorColumn = { bg = c.selection }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = { bg = c.selection }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory = { fg = c.darkerGray }, -- directory names (and other special names in listings)
@@ -40,8 +38,6 @@ function M.setup()
     DiffDelete = { bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
     DiffText = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = { fg = c.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-    -- TermCursor  = { }, -- cursor in a focused terminal
-    -- TermCursorNC= { }, -- cursor in an unfocused terminal
     ErrorMsg = { fg = c.error }, -- error messages on the command line
     VertSplit = { fg = c.border }, -- the column separating vertically split windows
     WinSeparator = { fg = c.border, bold = true }, -- the column separating vertically split windows
@@ -55,7 +51,6 @@ function M.setup()
     MatchParen = { fg = c.lowerMint, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
-    -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = { fg = c.lowerBlue }, -- |more-prompt|
     NonText = { fg = c.nonText }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text
@@ -65,12 +60,12 @@ function M.setup()
     FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
     FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
     Pmenu = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
-    PmenuSel = { bg = util.darken(c.selection, 0.8) }, -- Popup menu: selected item.
+    PmenuSel = { bg = c.blueishGreen }, -- Popup menu: selected item.
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.selection }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.lowerBlue }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search = { bg = util.darken(c.brightYellow, 0.2) }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search = { bg = c.blueishGreen, fg = c.brightMint }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.bg_search, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     SpecialKey = { fg = c.nonText }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -486,8 +481,13 @@ function M.setup()
     LeapLabelSecondary = { fg = c.brightMint, bold = true },
     LeapBackdrop = { fg = c.nonText },
 
-    FlashBackdrop = { fg = c.nonText },
-    FlashLabel = { bg = c.lowerBlue, bold = true, fg = c.fg },
+    -- FlashBackdrop = { fg = c.darkerGray },
+    FlashCurrent = { bg = c.lowerMint, fg = c.bg },
+    FlashLabel = { bg = c.brightMint, fg = c.bg, bold = true },
+    -- FlashCursor = { bg = c.hotRed },
+    FlashMatch = { bg = c.blueishGreen, fg = c.brightMint },
+    -- FlashPrompt = { bg = c.lightBlue },
+    -- FlashPromptIcon = { bg = c.gray },
 
     -- Cmp
     CmpDocumentation = { fg = c.fg, bg = c.bg_float },
@@ -593,7 +593,7 @@ function M.setup()
     MiniStatuslineModeReplace = { fg = c.black, bg = c.hotRed, bold = true },
     MiniStatuslineModeVisual = { fg = c.black, bg = c.lowerBlue, bold = true },
 
-    MiniSurround = { bg = c.orange, fg = c.black },
+    MiniSurround = { bg = c.brightYellow, fg = c.black },
 
     MiniTablineCurrent = { fg = c.fg, bg = c.selection },
     MiniTablineFill = { bg = c.black },
