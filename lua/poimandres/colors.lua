@@ -75,7 +75,7 @@ function M.setup(opts)
     add = util.darken(colors.brightMint, 0.15),
     delete = util.darken(colors.hotRed, 0.15),
     change = util.darken(colors.brightYellow, 0.15),
-    text = colors.desaturatedBlue,
+    text = colors.bluishGray,
   }
 
   colors.git = { change = colors.brightYellow, add = colors.brightMint, delete = colors.hotRed }
