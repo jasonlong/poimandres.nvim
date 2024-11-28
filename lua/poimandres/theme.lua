@@ -382,9 +382,15 @@ function M.setup()
     diffLine = { fg = c.comment },
     diffIndexLine = { fg = c.offWhite },
 
-    --todo-comments
-    -- TodoBgTODO = { bg = c.brightYellow, fg = c.bg },
-    -- TodoFgTODO = { fg = c.brightYellow },
+    -- fzf-lua
+    FzfLuaBorder = { fg = c.border_highlight, bg = c.bg_float },
+    FzfLuaCursor = { fg = c.bg, bg = c.gray }, -- character under the cursor
+    FzfLuaDirPart = { fg = c.desaturatedBlue },
+    FzfLuaFilePart = { fg = c.offWhite },
+    FzfLuaFzfPointer = { fg = c.brightMint },
+    FzfLuaHeaderBind = { fg = c.bluishGrayBrighter },
+    FzfLuaDirIcon = { fg = c.lightBlue },
+    FzfLuaHeaderText = { fg = c.desaturatedBlue },
 
     -- GitGutters
     GitGutterAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
