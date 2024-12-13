@@ -59,7 +59,8 @@ function M.setup()
     NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
     FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
     FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
-    Pmenu = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
+    -- Pmenu = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
+    Pmenu = { fg = c.fg }, -- Popup menu: normal item.
     PmenuSel = { bg = c.blueishGreen }, -- Popup menu: selected item.
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.selection }, -- Popup menu: Thumb of the scrollbar.
@@ -432,6 +433,16 @@ function M.setup()
     NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg },
     NeoTreeDimText = { fg = c.selection },
 
+    -- Blink
+    BlinkCmp = { bg = c.black },
+    BlinkCmpLabel = { bg = c.none },
+    BlinkCmpMenuSelection = { bg = c.lowerMint, fg = c.black },
+    BlinkCmpLabelMatch = { fg = c.brightMint, bg = c.none },
+    BlinkCmpDoc = { bg = c.black },
+    BlinkCmpDocBorder = { bg = c.black },
+    BlinkCmpSignatureHelpBorder = { bg = c.black },
+    BlinkCmpScrollBarGutter = { bg = c.black },
+
     -- Dashboard
     DashboardShortCut = { fg = c.lowerBlue },
     DashboardHeader = { fg = c.lowerBlue },
@@ -449,6 +460,10 @@ function M.setup()
     WhichKeySeparator = { fg = c.comment },
     WhichKeyFloat = { bg = c.bg_dark },
     WhichKeyValue = { fg = c.darkerGray },
+
+    -- Snacks
+    SnacksIndent = { fg = c.focus, nocombine = true },
+    SnacksIndentScope = { fg = c.comment, nocombine = true },
 
     -- LspSaga
     DiagnosticWarning = { link = "DiagnosticWarn" },
